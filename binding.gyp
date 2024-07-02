@@ -2,7 +2,7 @@
     "targets": [{
         "target_name": "node-file-mapping",
         "sources": [
-            "src/node-file-mapping.cpp"
+            "src/node_file_mapping.cpp"
         ],
         'dependencies': [
             "<!(node -p \"require('node-addon-api').targets\"):node_addon_api_except",
