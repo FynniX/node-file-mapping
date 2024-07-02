@@ -3,7 +3,7 @@ import typescript from '@rollup/plugin-typescript'
 import multi from '@rollup/plugin-multi-entry'
 
 export default {
-    input: 'src/**/*.ts',
+    input: 'lib/**/*.ts',
     output: [
         {
             dir: 'dist',

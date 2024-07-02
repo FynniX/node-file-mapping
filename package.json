@@ -32,15 +32,21 @@
     }
   },
   "scripts": {
-    "build": "rimraf dist && rollup -c"
+    "build": "pnpm run addon:build && rimraf dist && rollup -c",
+    "addon:build": "node-gyp rebuild",
+    "addon:clean": "node-gyp clean"
   },
   "devDependencies": {
     "@rollup/plugin-multi-entry": "^6.0.1",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.14.9",
+    "node-gyp": "^10.1.0",
     "rimraf": "^5.0.7",
     "rollup": "^4.18.0",
     "tslib": "^2.6.3",
     "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "node-addon-api": "^8.0.0"
   }
 }
