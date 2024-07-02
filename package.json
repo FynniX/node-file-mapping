@@ -24,6 +24,13 @@
   "main": "dist/_virtual/_virtual_multi-entry.cjs",
   "module": "dist/_virtual/_virtual_multi-entry.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/_virtual/_virtual_multi-entry.mjs",
+      "require": "./dist/_virtual/_virtual_multi-entry.cjs"
+    }
+  },
   "scripts": {
     "build": "rimraf dist && rollup -c"
   },
