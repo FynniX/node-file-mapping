@@ -131,3 +131,6 @@ dist
 
 # Codealike
 codealike.json
+
+# Jetbrains
+.idea
