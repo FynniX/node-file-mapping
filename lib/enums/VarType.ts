@@ -1,5 +1,5 @@
 export enum VarType {
-    char,
+    char = 0,
     char16_t,
     char32_t,
     wchar_t,
