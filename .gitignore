@@ -133,3 +133,6 @@ codealike.json
 
 # Jetbrains
 .idea
+
+# Node-gyp
+build
