@@ -1,0 +1,39 @@
+{
+  "type": "module",
+  "name": "node-file-mapping",
+  "description": "A package to create, open, read and write memory mapped files.",
+  "author": "Fynn Haupt",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/FynniX/node-file-mapping#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FynniX/node-file-mapping.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FynniX/node-file-mapping/issues"
+  },
+  "keywords": [
+    "nodejs",
+    "node",
+    "typescript",
+    "mapping",
+    "memory",
+    "file"
+  ],
+  "main": "dist/_virtual/_virtual_multi-entry.cjs",
+  "module": "dist/_virtual/_virtual_multi-entry.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-multi-entry": "^6.0.1",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.14.9",
+    "rimraf": "^5.0.7",
+    "rollup": "^4.18.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.3"
+  }
+}
