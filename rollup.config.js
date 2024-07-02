@@ -1,4 +1,4 @@
-// rollup.config.mjs
+// rollup.config.js
 import typescript from '@rollup/plugin-typescript'
 import multi from '@rollup/plugin-multi-entry'
 
@@ -8,6 +8,7 @@ export default {
         {
             dir: 'dist',
             format: 'cjs',
+            entryFileNames: '[name].cjs',
             preserveModules: true,
             exports: 'named'
         },
@@ -22,7 +23,8 @@ export default {
     plugins: [
         typescript(),
         multi({
-            preserveModules: true
+            preserveModules: true,
+            exports: true
         })
     ]
 };
