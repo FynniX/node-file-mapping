@@ -1,3 +1,3 @@
-export { BufferReader } from './BufferReader.js';
-export { BufferWriter } from './BufferWriter.js';
-export { FileMapping } from './FileMapping.js';
+export { BufferReader } from './classes/BufferReader.js';
+export { BufferWriter } from './classes/BufferWriter.js';
+export { FileMapping } from './classes/FileMapping.js';
