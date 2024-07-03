@@ -51,6 +51,22 @@ export class BufferWriter {
   }
 
   /**
+   * @name getBuffer
+   * @returns The buffer.
+   */
+  public getBuffer() {
+    return this._buffer;
+  }
+
+  /**
+   * @name getSize
+   * @returns {number} - The size of the buffer.
+   */
+  public getSize() {
+    return this._buffer.length;
+  }
+
+  /**
    * @name writeChar
    * @param {Char} data - The char to write.
    */
