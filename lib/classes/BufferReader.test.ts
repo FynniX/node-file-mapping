@@ -3,6 +3,7 @@ import { BufferWriter } from "./BufferWriter.js";
 import { BufferReader } from "./BufferReader.js";
 import { FileMapping } from "./FileMapping.js";
 import { VarType } from "../enums/VarType.js";
+import { Char } from "./Char.js";
 
 let writer: BufferWriter | null = null;
 beforeEach(() => {
@@ -10,6 +11,70 @@ beforeEach(() => {
 });
 
 describe("Test the BufferReader class", () => {
+  test("Validate the readChar method", () => {
+    // Write example buffer
+    expect(writer).not.toBeNull();
+    expect(writer?.getSize()).toBe(0);
+    const size = FileMapping.getVarTypeSize(VarType.char);
+    const data = new Char(Math.floor(Math.random() * 100));
+    writer?.writeChar(data);
+    expect(writer?.getSize()).toBe(size);
+
+    // Check weather reader sees the example buffer
+    const reader = new BufferReader(writer?.getBuffer() as Buffer);
+    expect(reader.getSize()).toBe(size);
+    expect(reader.readChar().toString()).toBe(data.toString());
+    expect(reader.getSize()).toBe(0);
+  });
+
+  test("Validate the readChar16 method", () => {
+    // Write example buffer
+    expect(writer).not.toBeNull();
+    expect(writer?.getSize()).toBe(0);
+    const size = FileMapping.getVarTypeSize(VarType.char16_t);
+    const data = new Char(Math.floor(Math.random() * 100));
+    writer?.writeChar16(data);
+    expect(writer?.getSize()).toBe(size);
+
+    // Check weather reader sees the example buffer
+    const reader = new BufferReader(writer?.getBuffer() as Buffer);
+    expect(reader.getSize()).toBe(size);
+    expect(reader.readChar16().toString()).toBe(data.toString());
+    expect(reader.getSize()).toBe(0);
+  });
+
+  test("Validate the readChar32 method", () => {
+    // Write example buffer
+    expect(writer).not.toBeNull();
+    expect(writer?.getSize()).toBe(0);
+    const size = FileMapping.getVarTypeSize(VarType.char32_t);
+    const data = new Char(Math.floor(Math.random() * 100));
+    writer?.writeChar32(data);
+    expect(writer?.getSize()).toBe(size);
+
+    // Check weather reader sees the example buffer
+    const reader = new BufferReader(writer?.getBuffer() as Buffer);
+    expect(reader.getSize()).toBe(size);
+    expect(reader.readChar32().toString()).toBe(data.toString());
+    expect(reader.getSize()).toBe(0);
+  });
+
+  test("Validate the readWideChar method", () => {
+    // Write example buffer
+    expect(writer).not.toBeNull();
+    expect(writer?.getSize()).toBe(0);
+    const size = FileMapping.getVarTypeSize(VarType.wchar_t);
+    const data = new Char(Math.floor(Math.random() * 100));
+    writer?.writeWideChar(data);
+    expect(writer?.getSize()).toBe(size);
+
+    // Check weather reader sees the example buffer
+    const reader = new BufferReader(writer?.getBuffer() as Buffer);
+    expect(reader.getSize()).toBe(size);
+    expect(reader.readWideChar().toString()).toBe(data.toString());
+    expect(reader.getSize()).toBe(0);
+  });
+
   test("Validate the readUnsignedChar method", () => {
     // Write example buffer
     expect(writer).not.toBeNull();
