@@ -36,8 +36,6 @@ jobs:
 
       - name: Publish package
         run: pnpm -r publish --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   prebuild-windows:
     name: Prebuild Windows
@@ -77,7 +75,7 @@ jobs:
       - name: Prebuild upload
         run: pnpm run prebuild:upload
         env:
-          GITHUB_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   prebuild-linux:
     name: Prebuild Linux
@@ -99,4 +97,4 @@ jobs:
       - name: Prebuild upload
         run: pnpm run prebuild:upload
         env:
-          GITHUB_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
