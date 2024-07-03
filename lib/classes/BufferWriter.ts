@@ -1,5 +1,5 @@
 import { Endian } from "../enums/Endian.js";
-import FileMapping from "./FileMapping.js";
+import { FileMapping } from "./FileMapping.js";
 import { VarType } from "../enums/VarType.js";
 import { Char } from "./Char.js";
 
