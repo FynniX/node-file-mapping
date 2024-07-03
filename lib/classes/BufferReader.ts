@@ -1,6 +1,8 @@
 import {Endian} from "../enums/Endian.js";
 import FileMapping from "./FileMapping.js";
 import {VarType} from "../enums/VarType.js";
+import {Char} from "./Char.js";
+import {WideChar} from "./WideChar.js";
 
 /**
  * @class
@@ -57,7 +59,7 @@ export class BufferReader {
      */
     public readChar() {
         const size = FileMapping.getVarTypeSize(VarType.char)
-        return Number(this.readNumber(size, false))
+        return new Char(Number(this.readNumber(size, false)))
     }
 
     /**
@@ -66,7 +68,7 @@ export class BufferReader {
      */
     public readChar16() {
         const size = FileMapping.getVarTypeSize(VarType.char16_t)
-        return Number(this.readNumber(size, false))
+        return new Char(Number(this.readNumber(size, false)))
     }
 
     /**
@@ -75,16 +77,16 @@ export class BufferReader {
      */
     public readChar32() {
         const size = FileMapping.getVarTypeSize(VarType.char32_t)
-        return Number(this.readNumber(size, false))
+        return new Char(Number(this.readNumber(size, false)))
     }
 
     /**
-     * @name readWChar
+     * @name readWideChar
      * @returns A wchar_t.
      */
-    public readWChar() {
+    public readWideChar() {
         const size = FileMapping.getVarTypeSize(VarType.wchar_t)
-        return Number(this.readNumber(size, false))
+        return new WideChar(Number(this.readNumber(size, false)))
     }
 
     /**
@@ -93,7 +95,7 @@ export class BufferReader {
      */
     public readUnsignedChar() {
         const size = FileMapping.getVarTypeSize(VarType.unsigned_char)
-        return Number(this.readNumber(size, true))
+        return new Char(Number(this.readNumber(size, true)))
     }
 
     /**

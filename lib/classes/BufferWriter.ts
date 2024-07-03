@@ -1,6 +1,8 @@
 import {Endian} from "../enums/Endian.js";
 import FileMapping from "./FileMapping.js";
 import {VarType} from "../enums/VarType.js";
+import {WideChar} from "./WideChar.js";
+import {Char} from "./Char.js";
 
 /**
  * @class
@@ -47,45 +49,45 @@ export class BufferWriter {
      * @name writeChar
      * @param {number} data - The char to write.
      */
-    public writeChar(data: number) {
+    public writeChar(data: Char) {
         const size = FileMapping.getVarTypeSize(VarType.char)
-        this.writeNumber(data, size, false)
+        this.writeNumber(data.getValue(), size, false)
     }
 
     /**
      * @name writeChar16
      * @param {number} data - The char_16t to write.
      */
-    public writeChar16(data: number) {
+    public writeChar16(data: Char) {
         const size = FileMapping.getVarTypeSize(VarType.char16_t)
-        this.writeNumber(data, size, false)
+        this.writeNumber(data.getValue(), size, false)
     }
 
     /**
      * @name writeChar32
      * @param {number} data - The char32_t to write.
      */
-    public writeChar32(data: number) {
+    public writeChar32(data: Char) {
         const size = FileMapping.getVarTypeSize(VarType.char32_t)
-        this.writeNumber(data, size, false)
+        this.writeNumber(data.getValue(), size, false)
     }
 
     /**
-     * @name writeWChar
+     * @name writeWideChar
      * @param {number} data - The wchar_t to write.
      */
-    public writeWChar(data: number) {
+    public writeWideChar(data: WideChar) {
         const size = FileMapping.getVarTypeSize(VarType.wchar_t)
-        this.writeNumber(data, size, false)
+        this.writeNumber(data.getValue(), size, false)
     }
 
     /**
      * @name writeUnsignedChar
      * @param {number} data - The unsigned_char to write.
      */
-    public writeUnsignedChar(data: number) {
+    public writeUnsignedChar(data: Char) {
         const size = FileMapping.getVarTypeSize(VarType.unsigned_char)
-        this.writeNumber(data, size, true)
+        this.writeNumber(data.getValue(), size, true)
     }
 
     /**
