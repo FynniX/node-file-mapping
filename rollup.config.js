@@ -25,6 +25,7 @@ export default {
     multi({
       preserveModules: true,
       exports: true,
+      exclude: ["**/*.test.ts"],
     }),
   ],
 };
