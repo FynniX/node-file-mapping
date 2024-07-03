@@ -38,7 +38,12 @@
     "lint": "eslint lib",
     "lint:fix": "eslint lib --fix",
     "format": "prettier . --check --ignore-unknown",
-    "format:fix": "prettier . --write --ignore-unknown"
+    "format:fix": "prettier . --write --ignore-unknown",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
   },
   "devDependencies": {
     "@eslint/js": "^9.6.0",
@@ -47,6 +52,8 @@
     "@types/node": "^20.14.9",
     "eslint": "9.x",
     "globals": "^15.8.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
     "node-gyp": "^10.1.0",
     "prettier": "3.3.2",
     "rimraf": "^5.0.7",
