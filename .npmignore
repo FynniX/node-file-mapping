@@ -1,10 +1,15 @@
 .idea
+.github
 .husky
 build
+prebuilds
 docs
+lib
+scripts
 codealike.json
 .prettierrc
 eslint.config.js
 jest.config.js
 rollup.config.js
 typedoc.json
+*.md
