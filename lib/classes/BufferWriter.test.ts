@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, test } from "@jest/globals";
 import { BufferWriter } from "./BufferWriter.js";
 import { FileMapping } from "./FileMapping.js";
 import { VarType } from "../enums/VarType.js";
+import { Char } from "./Char.js";
 
 let writer: BufferWriter | null = null;
 beforeEach(() => {
@@ -9,6 +10,38 @@ beforeEach(() => {
 });
 
 describe("Test the BufferWriter class", () => {
+  test("Validate the writeChar method", () => {
+    expect(writer).not.toBeNull();
+    expect(writer?.getSize()).toBe(0);
+    const size = FileMapping.getVarTypeSize(VarType.char);
+    writer?.writeChar(new Char(Math.floor(Math.random() * 100)));
+    expect(writer?.getSize()).toBe(size);
+  });
+
+  test("Validate the writeChar16 method", () => {
+    expect(writer).not.toBeNull();
+    expect(writer?.getSize()).toBe(0);
+    const size = FileMapping.getVarTypeSize(VarType.char16_t);
+    writer?.writeChar16(new Char(Math.floor(Math.random() * 100)));
+    expect(writer?.getSize()).toBe(size);
+  });
+
+  test("Validate the writeChar32 method", () => {
+    expect(writer).not.toBeNull();
+    expect(writer?.getSize()).toBe(0);
+    const size = FileMapping.getVarTypeSize(VarType.char32_t);
+    writer?.writeChar32(new Char(Math.floor(Math.random() * 100)));
+    expect(writer?.getSize()).toBe(size);
+  });
+
+  test("Validate the writeWideChar method", () => {
+    expect(writer).not.toBeNull();
+    expect(writer?.getSize()).toBe(0);
+    const size = FileMapping.getVarTypeSize(VarType.wchar_t);
+    writer?.writeWideChar(new Char(Math.floor(Math.random() * 100)));
+    expect(writer?.getSize()).toBe(size);
+  });
+
   test("Validate the writeUnsignedChar method", () => {
     expect(writer).not.toBeNull();
     expect(writer?.getSize()).toBe(0);
