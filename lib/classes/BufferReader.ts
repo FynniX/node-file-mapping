@@ -2,7 +2,6 @@ import {Endian} from "../enums/Endian.js";
 import FileMapping from "./FileMapping.js";
 import {VarType} from "../enums/VarType.js";
 import {Char} from "./Char.js";
-import {WideChar} from "./WideChar.js";
 
 /**
  * @class
@@ -27,7 +26,7 @@ export class BufferReader {
     private readNumber(size: number, unsigned: boolean) {
         // Check weather we have enough data
         if (this._buffer.length < size)
-            throw new Error('Not enough data to read a char')
+            throw new Error('Not enough data to read a number')
 
         let value
         switch (size) {
@@ -68,7 +67,7 @@ export class BufferReader {
      */
     public readChar16() {
         const size = FileMapping.getVarTypeSize(VarType.char16_t)
-        return new Char(Number(this.readNumber(size, false)))
+        return new Char(Number(this.readNumber(size, true)))
     }
 
     /**
@@ -77,7 +76,7 @@ export class BufferReader {
      */
     public readChar32() {
         const size = FileMapping.getVarTypeSize(VarType.char32_t)
-        return new Char(Number(this.readNumber(size, false)))
+        return new Char(Number(this.readNumber(size, true)))
     }
 
     /**
@@ -86,7 +85,7 @@ export class BufferReader {
      */
     public readWideChar() {
         const size = FileMapping.getVarTypeSize(VarType.wchar_t)
-        return new WideChar(Number(this.readNumber(size, false)))
+        return new Char(Number(this.readNumber(size, false)))
     }
 
     /**
@@ -95,7 +94,7 @@ export class BufferReader {
      */
     public readUnsignedChar() {
         const size = FileMapping.getVarTypeSize(VarType.unsigned_char)
-        return new Char(Number(this.readNumber(size, true)))
+        return Number(this.readNumber(size, true))
     }
 
     /**

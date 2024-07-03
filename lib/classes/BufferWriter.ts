@@ -1,7 +1,6 @@
 import {Endian} from "../enums/Endian.js";
 import FileMapping from "./FileMapping.js";
 import {VarType} from "../enums/VarType.js";
-import {WideChar} from "./WideChar.js";
 import {Char} from "./Char.js";
 
 /**
@@ -47,47 +46,48 @@ export class BufferWriter {
 
     /**
      * @name writeChar
-     * @param {number} data - The char to write.
+     * @param {Char} data - The char to write.
      */
     public writeChar(data: Char) {
         const size = FileMapping.getVarTypeSize(VarType.char)
-        this.writeNumber(data.getValue(), size, false)
+        this.writeNumber(data.toNumber(), size, false)
     }
 
     /**
      * @name writeChar16
-     * @param {number} data - The char_16t to write.
+     * @param {Char} data - The char_16t to write.
      */
     public writeChar16(data: Char) {
         const size = FileMapping.getVarTypeSize(VarType.char16_t)
-        this.writeNumber(data.getValue(), size, false)
+        this.writeNumber(data.toNumber(), size, true)
     }
 
     /**
      * @name writeChar32
-     * @param {number} data - The char32_t to write.
+     * @param {Char} data - The char32_t to write.
      */
     public writeChar32(data: Char) {
+
         const size = FileMapping.getVarTypeSize(VarType.char32_t)
-        this.writeNumber(data.getValue(), size, false)
+        this.writeNumber(data.toNumber(), size, true)
     }
 
     /**
      * @name writeWideChar
-     * @param {number} data - The wchar_t to write.
+     * @param {Char} data - The wchar_t to write.
      */
-    public writeWideChar(data: WideChar) {
+    public writeWideChar(data: Char) {
         const size = FileMapping.getVarTypeSize(VarType.wchar_t)
-        this.writeNumber(data.getValue(), size, false)
+        this.writeNumber(data.toNumber(), size, false)
     }
 
     /**
      * @name writeUnsignedChar
-     * @param {number} data - The unsigned_char to write.
+     * @param {number} data - The unsigned char to write.
      */
-    public writeUnsignedChar(data: Char) {
+    public writeUnsignedChar(data: number) {
         const size = FileMapping.getVarTypeSize(VarType.unsigned_char)
-        this.writeNumber(data.getValue(), size, true)
+        this.writeNumber(data, size, true)
     }
 
     /**

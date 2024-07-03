@@ -1,28 +1,24 @@
-
 /**
  * @class
  * @name Char
- * @description Extends the number class to make conversion to char available.
+ * @description Represents a class of a class that provides number and encoded value
  */
-export class Char extends Number {
+export class Char {
     private readonly _value: number
 
     /**
      * @constructor
-     * @param {number} value - the number.
+     * @param {number} value - the value.
      */
     constructor(value: number) {
-        super(value)
         this._value = value
     }
 
-    public getValue() {
-        return this._value
+    public toString() {
+        return String.fromCharCode(this._value)
     }
 
-    public toCharString() {
-        // TODO: Implement conversion
-        console.log(this._value)
-        return "todo"
+    public toNumber() {
+        return this._value
     }
 }
