@@ -27,7 +27,7 @@
     }
   },
   "scripts": {
-    "install": "prebuild-install || pnpm run build:addon",
+    "install": "prebuild-install || pnpm run addon:build",
     "build": "pnpm run addon:build && rimraf dist && rollup -c",
     "test": "jest",
     "addon:build": "node-gyp rebuild",
