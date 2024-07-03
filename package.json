@@ -37,7 +37,7 @@
     "addon:clean": "node-gyp clean",
     "prebuild:build:x64": "prebuild -all -a x64 --strip",
     "prebuild:build:ia32": "prebuild -all -a ia32 --strip",
-    "prebuild:upload": "node ./scripts/prebuild-upload.js",
+    "prebuild:upload": "node scripts/prebuild-upload.cjs",
     "lint": "eslint lib",
     "lint:fix": "eslint lib --fix",
     "format": "prettier . --check --ignore-unknown",
