@@ -24,10 +24,6 @@ export class BufferReader {
   }
 
   private readNumber(size: number, unsigned: boolean) {
-    // Check weather we have enough data
-    if (this._buffer.length < size)
-      throw new Error("Not enough data to read a number");
-
     let value;
     switch (size) {
       case 1:
@@ -46,10 +42,41 @@ export class BufferReader {
         throw new Error("Invalid variable size");
     }
 
-    // Remove the bytes from the buffer
-    this._buffer = this._buffer.subarray(size);
-
     return value;
+  }
+
+  private checkSize(size: number) {
+    // Check weather we have enough data
+    if (this._buffer.length < size)
+      throw new Error("Not enough data to read a number");
+  }
+
+  private remove(size: number) {
+    this._buffer = this._buffer.subarray(size);
+  }
+
+  /**
+   * @name getBuffer
+   * @returns The buffer.
+   */
+  public getBuffer() {
+    return this._buffer;
+  }
+
+  /**
+   * @name getSize
+   * @returns {number} - The size of the buffer.
+   */
+  public getSize() {
+    return this._buffer.length;
+  }
+
+  /**
+   * @name getEndian
+   * @returns {Endian} - The endianness.
+   */
+  public getEndian() {
+    return this._endian;
   }
 
   /**
@@ -174,7 +201,10 @@ export class BufferReader {
    * @returns A int8_t.
    */
   public readInt8() {
-    return this._buffer.readInt8();
+    this.checkSize(1);
+    const value = this._buffer.readInt8();
+    this.remove(1);
+    return value;
   }
 
   /**
@@ -182,9 +212,13 @@ export class BufferReader {
    * @returns A int16_t.
    */
   public readInt16() {
-    return this._endian === Endian.Little
-      ? this._buffer.readInt16LE()
-      : this._buffer.readInt16BE();
+    this.checkSize(2);
+    const value =
+      this._endian === Endian.Little
+        ? this._buffer.readInt16LE()
+        : this._buffer.readInt16BE();
+    this.remove(2);
+    return value;
   }
 
   /**
@@ -192,9 +226,13 @@ export class BufferReader {
    * @returns A int32_t.
    */
   public readInt32() {
-    return this._endian === Endian.Little
-      ? this._buffer.readInt32LE()
-      : this._buffer.readInt32BE();
+    this.checkSize(4);
+    const value =
+      this._endian === Endian.Little
+        ? this._buffer.readInt32LE()
+        : this._buffer.readInt32BE();
+    this.remove(4);
+    return value;
   }
 
   /**
@@ -202,9 +240,13 @@ export class BufferReader {
    * @returns A int64_t.
    */
   public readInt64() {
-    return this._endian === Endian.Little
-      ? this._buffer.readBigInt64LE()
-      : this._buffer.readBigInt64BE();
+    this.checkSize(8);
+    const value =
+      this._endian === Endian.Little
+        ? this._buffer.readBigInt64LE()
+        : this._buffer.readBigInt64BE();
+    this.remove(8);
+    return value;
   }
 
   /**
@@ -212,9 +254,10 @@ export class BufferReader {
    * @returns A uint8_t.
    */
   public readUInt8() {
-    return this._endian === Endian.Little
-      ? this._buffer.readUInt8()
-      : this._buffer.readUInt8();
+    this.checkSize(1);
+    const value = this._buffer.readUInt8();
+    this.remove(1);
+    return value;
   }
 
   /**
@@ -222,9 +265,12 @@ export class BufferReader {
    * @returns A uint16_t.
    */
   public readUInt16() {
-    return this._endian === Endian.Little
+    this.checkSize(2);
+    const value = Endian.Little
       ? this._buffer.readUInt16LE()
       : this._buffer.readUInt16BE();
+    this.remove(2);
+    return value;
   }
 
   /**
@@ -232,9 +278,12 @@ export class BufferReader {
    * @returns A uint32_t.
    */
   public readUInt32() {
-    return this._endian === Endian.Little
-      ? this._buffer.readUInt32BE()
+    this.checkSize(4);
+    const value = Endian.Little
+      ? this._buffer.readUInt32LE()
       : this._buffer.readUInt32BE();
+    this.remove(4);
+    return value;
   }
 
   /**
@@ -242,9 +291,12 @@ export class BufferReader {
    * @returns A uint64_t.
    */
   public readUInt64() {
-    return this._endian === Endian.Little
-      ? this._buffer.readBigUInt64LE()
+    this.checkSize(8);
+    const value = Endian.Little
+      ? this._buffer.readBigUint64LE()
       : this._buffer.readBigUint64BE();
+    this.remove(8);
+    return value;
   }
 
   /**
@@ -252,9 +304,13 @@ export class BufferReader {
    * @returns A float.
    */
   public readFloat() {
-    return this._endian === Endian.Little
-      ? this._buffer.readFloatLE()
-      : this._buffer.readFloatBE();
+    this.checkSize(4);
+    const value =
+      this._endian === Endian.Little
+        ? this._buffer.readFloatLE()
+        : this._buffer.readFloatBE();
+    this.remove(4);
+    return value;
   }
 
   /**
@@ -262,9 +318,13 @@ export class BufferReader {
    * @returns A double.
    */
   public readDouble() {
-    return this._endian === Endian.Little
-      ? this._buffer.readDoubleLE()
-      : this._buffer.readDoubleBE();
+    this.checkSize(8);
+    const value =
+      this._endian === Endian.Little
+        ? this._buffer.readDoubleLE()
+        : this._buffer.readDoubleBE();
+    this.remove(8);
+    return value;
   }
 
   /**
