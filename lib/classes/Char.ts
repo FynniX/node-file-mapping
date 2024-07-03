@@ -12,6 +12,9 @@ export class Char {
    */
   constructor(value: number) {
     this._value = value;
+
+    if (value > 0xffff || value < 0)
+      throw new Error("UTF-16 value needs to be between 0 and 0xFFFF");
   }
 
   public toString() {
