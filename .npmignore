@@ -1,5 +1,8 @@
+.idea
 .husky
 build
 codealike.json
 .prettierrc
 eslint.config.js
+jest.config.js
+rollup.config.js
