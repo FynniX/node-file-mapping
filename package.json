@@ -41,7 +41,7 @@
     "lint:fix": "eslint lib --fix",
     "format": "prettier . --check --ignore-unknown",
     "format:fix": "prettier . --write --ignore-unknown",
-    "prepare": "husky"
+    "prepare": "husky && pnpm run build"
   },
   "lint-staged": {
     "**/*.{js,ts}": "eslint --fix",
