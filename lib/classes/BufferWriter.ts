@@ -5,16 +5,15 @@ import { Char } from "./Char.js";
 
 /**
  * @class
- * @name BufferWriter
- * @description A buffer writer.
+ * BufferWriter
+ * A buffer writer.
  */
 export class BufferWriter {
   private _buffer: Buffer = Buffer.alloc(0);
   private readonly _endian: Endian;
 
   /**
-   * @constructor
-   * @name BufferWriter
+   * BufferWriter
    * @param {Endian} [endian=Endian.Little] - The endianness.
    */
   constructor(endian: Endian = Endian.Little) {
@@ -51,7 +50,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name getBuffer
+   * getBuffer
    * @returns The buffer.
    */
   public getBuffer() {
@@ -59,7 +58,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name getSize
+   * getSize
    * @returns {number} - The size of the buffer.
    */
   public getSize() {
@@ -67,7 +66,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name getEndian
+   * getEndian
    * @returns {Endian} - The endianness.
    */
   public getEndian() {
@@ -75,7 +74,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeChar
+   * writeChar
    * @param {Char} data - The char to write.
    */
   public writeChar(data: Char) {
@@ -84,7 +83,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeChar16
+   * writeChar16
    * @param {Char} data - The char_16t to write.
    */
   public writeChar16(data: Char) {
@@ -93,7 +92,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeChar32
+   * writeChar32
    * @param {Char} data - The char32_t to write.
    */
   public writeChar32(data: Char) {
@@ -102,7 +101,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeWideChar
+   * writeWideChar
    * @param {Char} data - The wchar_t to write.
    */
   public writeWideChar(data: Char) {
@@ -111,7 +110,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUnsignedChar
+   * writeUnsignedChar
    * @param {number} data - The unsigned char to write.
    */
   public writeUnsignedChar(data: number) {
@@ -120,7 +119,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeShortInt
+   * writeShortInt
    * @param {number} data - The short int to write.
    */
   public writeShortInt(data: number) {
@@ -129,7 +128,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeInt
+   * writeInt
    * @param {number} data - The int to write.
    */
   public writeInt(data: number) {
@@ -138,7 +137,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeLongInt
+   * writeLongInt
    * @param {number | bigint} data - The long int to write.
    */
   public writeLongInt(data: number | bigint) {
@@ -147,7 +146,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeLongLongInt
+   * writeLongLongInt
    * @param {bigint} data - The long long int to write.
    */
   public writeLongLongInt(data: bigint) {
@@ -156,7 +155,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUnsignedShortInt
+   * writeUnsignedShortInt
    * @param {number} data - The unsigned short int to write.
    */
   public writeUnsignedShortInt(data: number) {
@@ -165,7 +164,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUnsignedInt
+   * writeUnsignedInt
    * @param {number} data - The unsigned int to write.
    */
   public writeUnsignedInt(data: number) {
@@ -174,7 +173,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUnsignedLongInt
+   * writeUnsignedLongInt
    * @param {number | bigint} data - The unsigned long int to write.
    */
   public writeUnsignedLongInt(data: number | bigint) {
@@ -183,7 +182,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUnsignedLongLongInt
+   * writeUnsignedLongLongInt
    * @param {bigint} data - The unsigned long long int to write.
    */
   public writeUnsignedLongLongInt(data: bigint) {
@@ -192,7 +191,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeInt8
+   * writeInt8
    * @param {number} data - The int8_t to write.
    */
   public writeInt8(data: number) {
@@ -203,7 +202,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeInt16
+   * writeInt16
    * @param {number} data - The int16_t to write.
    */
   public writeInt16(data: number) {
@@ -216,7 +215,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeInt32
+   * writeInt32
    * @param {number} data - The int32_t to write.
    */
   public writeInt32(data: number) {
@@ -229,7 +228,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeInt64
+   * writeInt64
    * @param {bigint} data - The int64_t to write.
    */
   public writeInt64(data: bigint) {
@@ -242,7 +241,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUInt8
+   * writeUInt8
    * @param {number} data - The uint8_t to write.
    */
   public writeUInt8(data: number) {
@@ -253,7 +252,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUInt16
+   * writeUInt16
    * @param {number} data - The uint16_t to write.
    */
   public writeUInt16(data: number) {
@@ -266,7 +265,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUInt32
+   * writeUInt32
    * @param {number} data - The uint32_t to write.
    */
   public writeUInt32(data: number) {
@@ -279,7 +278,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeUInt64
+   * writeUInt64
    * @param {bigint} data - The uint64_t to write.
    */
   public writeUInt64(data: bigint) {
@@ -292,7 +291,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeFloat
+   * writeFloat
    * @param {number} data - The float to write.
    */
   public writeFloat(data: number) {
@@ -305,7 +304,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeDouble
+   * writeDouble
    * @param {number} data - The double to write.
    */
   public writeDouble(data: number) {
@@ -318,7 +317,7 @@ export class BufferWriter {
   }
 
   /**
-   * @name writeBool
+   * writeBool
    * @param {boolean} data - The boolean to write.
    */
   public writeBool(data: boolean) {

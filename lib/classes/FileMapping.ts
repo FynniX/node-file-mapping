@@ -8,20 +8,19 @@ export class FileMapping {
   private readonly _addonInstance: AddonInstance;
 
   /**
-   * @name bufferPath
-   * @description The path of the buffer.
+   * bufferPath
+   * The path of the buffer.
    */
   public readonly bufferPath: string;
 
   /**
-   * @name bufferSize
-   * @description The size of the buffer in bytes.
+   * bufferSize
+   * The size of the buffer in bytes.
    */
   public readonly bufferSize: number = 0;
 
   /**
-   * @constructor
-   * @name FileMapping
+   * FileMapping
    * @param bufferPath The path of the buffer.
    * @param bufferSize The size of the buffer.
    */
@@ -39,24 +38,24 @@ export class FileMapping {
   }
 
   /**
-   * @name create
-   * @description Creates the buffer.
+   * create
+   * Creates the buffer.
    */
   public create() {
     this._addonInstance.create();
   }
 
   /**
-   * @name open
-   * @description Opens the buffer.
+   * open
+   * Opens the buffer.
    */
   public open() {
     this._addonInstance.open();
   }
 
   /**
-   * @name read
-   * @description Reads the buffer.
+   * read
+   * Reads the buffer.
    * @returns The buffer.
    */
   public read() {
@@ -64,8 +63,8 @@ export class FileMapping {
   }
 
   /**
-   * @name write
-   * @description Writes to the buffer.
+   * write
+   * Writes to the buffer.
    * @param data The new buffer to overwrite the buffer.
    */
   public write(data: Buffer) {
@@ -73,8 +72,8 @@ export class FileMapping {
   }
 
   /**
-   * @name close
-   * @description Closes the buffer.
+   * close
+   * Closes the buffer.
    */
   public close() {
     this._addonInstance.close();

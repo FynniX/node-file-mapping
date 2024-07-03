@@ -1,13 +1,12 @@
 /**
  * @class
- * @name Char
- * @description Represents a class of a class that provides number and encoded value
+ * Char
+ * Represents a class of a class that provides number and encoded value
  */
 export class Char {
   private readonly _value: number;
 
   /**
-   * @constructor
    * @param {number} value - the value.
    */
   constructor(value: number) {

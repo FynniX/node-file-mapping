@@ -5,16 +5,15 @@ import { Char } from "./Char.js";
 
 /**
  * @class
- * @name BufferReader
- * @description A buffer reader.
+ * BufferReader
+ * A buffer reader.
  */
 export class BufferReader {
   private _buffer: Buffer;
   private readonly _endian: Endian;
 
   /**
-   * @constructor
-   * @name BufferReader
+   * BufferReader
    * @param buffer - The buffer.
    * @param {Endian} [endian=Endian.Little] - The endianness.
    */
@@ -56,7 +55,7 @@ export class BufferReader {
   }
 
   /**
-   * @name getBuffer
+   * getBuffer
    * @returns The buffer.
    */
   public getBuffer() {
@@ -64,7 +63,7 @@ export class BufferReader {
   }
 
   /**
-   * @name getSize
+   * getSize
    * @returns {number} - The size of the buffer.
    */
   public getSize() {
@@ -72,7 +71,7 @@ export class BufferReader {
   }
 
   /**
-   * @name getEndian
+   * getEndian
    * @returns {Endian} - The endianness.
    */
   public getEndian() {
@@ -80,7 +79,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readChar
+   * readChar
    * @returns A char.
    */
   public readChar() {
@@ -89,7 +88,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readChar16
+   * readChar16
    * @returns A char16_t.
    */
   public readChar16() {
@@ -98,7 +97,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readChar32
+   * readChar32
    * @returns A char32_t.
    */
   public readChar32() {
@@ -107,7 +106,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readWideChar
+   * readWideChar
    * @returns A wchar_t.
    */
   public readWideChar() {
@@ -116,7 +115,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUnsignedChar
+   * readUnsignedChar
    * @returns A unsigned char.
    */
   public readUnsignedChar() {
@@ -125,7 +124,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readShortInt
+   * readShortInt
    * @returns A short int.
    */
   public readShortInt() {
@@ -134,7 +133,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readInt
+   * readInt
    * @returns A int.
    */
   public readInt() {
@@ -143,7 +142,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readLongInt
+   * readLongInt
    * @returns A long int.
    */
   public readLongInt() {
@@ -152,7 +151,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readLongLongInt
+   * readLongLongInt
    * @returns A long long int.
    */
   public readLongLongInt() {
@@ -161,7 +160,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUnsignedShortInt
+   * readUnsignedShortInt
    * @returns A unsigned short int.
    */
   public readUnsignedShortInt() {
@@ -170,7 +169,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUnsignedInt
+   * readUnsignedInt
    * @returns A unsigned int.
    */
   public readUnsignedInt() {
@@ -179,7 +178,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUnsignedLongInt
+   * readUnsignedLongInt
    * @returns A unsigned long int.
    */
   public readUnsignedLongInt() {
@@ -188,7 +187,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUnsignedLongLongInt
+   * readUnsignedLongLongInt
    * @returns A unsigned long long int.
    */
   public readUnsignedLongLongInt() {
@@ -197,7 +196,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readInt8
+   * readInt8
    * @returns A int8_t.
    */
   public readInt8() {
@@ -208,7 +207,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readInt16
+   * readInt16
    * @returns A int16_t.
    */
   public readInt16() {
@@ -222,7 +221,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readInt32
+   * readInt32
    * @returns A int32_t.
    */
   public readInt32() {
@@ -236,7 +235,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readInt64
+   * readInt64
    * @returns A int64_t.
    */
   public readInt64() {
@@ -250,7 +249,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUInt8
+   * readUInt8
    * @returns A uint8_t.
    */
   public readUInt8() {
@@ -261,7 +260,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUInt16
+   * readUInt16
    * @returns A uint16_t.
    */
   public readUInt16() {
@@ -274,7 +273,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUInt32
+   * readUInt32
    * @returns A uint32_t.
    */
   public readUInt32() {
@@ -287,7 +286,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readUInt64
+   * readUInt64
    * @returns A uint64_t.
    */
   public readUInt64() {
@@ -300,7 +299,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readFloat
+   * readFloat
    * @returns A float.
    */
   public readFloat() {
@@ -314,7 +313,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readDouble
+   * readDouble
    * @returns A double.
    */
   public readDouble() {
@@ -328,7 +327,7 @@ export class BufferReader {
   }
 
   /**
-   * @name readBool
+   * readBool
    * @returns A bool.
    */
   public readBool() {

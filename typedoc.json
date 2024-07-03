@@ -1,0 +1,14 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "node-file-mapping",
+  "entryPointStrategy": "expand",
+  "entryPoints": ["lib"],
+  "sort": ["source-order"],
+  "plugin": ["typedoc-theme-hierarchy"],
+  "theme": "hierarchy",
+  "navigationLinks": {
+    "Homepage": "https://fynnhaupt.de/",
+    "GitHub": "https://github.com/FynniX/node-file-mapping/",
+    "NPM": "https://www.npmjs.com/package/node-file-mapping/"
+  }
+}

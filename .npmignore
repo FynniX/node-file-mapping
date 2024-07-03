@@ -1,8 +1,10 @@
 .idea
 .husky
 build
+docs
 codealike.json
 .prettierrc
 eslint.config.js
 jest.config.js
 rollup.config.js
+typedoc.json
