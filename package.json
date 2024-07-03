@@ -32,6 +32,7 @@
     }
   },
   "scripts": {
+    "install": "pnpm run addon:build",
     "build": "pnpm run addon:build && rimraf dist && rollup -c",
     "addon:build": "node-gyp rebuild",
     "addon:clean": "node-gyp clean",
