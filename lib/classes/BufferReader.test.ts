@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, test } from "@jest/globals";
 import { BufferWriter } from "./BufferWriter.js";
 import { BufferReader } from "./BufferReader.js";
-import FileMapping from "./FileMapping.js";
+import { FileMapping } from "./FileMapping.js";
 import { VarType } from "../enums/VarType.js";
 
 let writer: BufferWriter | null = null;
