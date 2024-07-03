@@ -67,6 +67,14 @@ export class BufferWriter {
   }
 
   /**
+   * @name getEndian
+   * @returns {Endian} - The endianness.
+   */
+  public getEndian() {
+    return this._endian;
+  }
+
+  /**
    * @name writeChar
    * @param {Char} data - The char to write.
    */
