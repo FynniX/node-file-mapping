@@ -151,7 +151,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(reader.readLongLongInt()).toBe(data);
+    expect(Number(reader.readLongLongInt())).toBe(Number(data));
     expect(reader.getSize()).toBe(0);
   });
 
@@ -215,7 +215,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(reader.readUnsignedLongLongInt()).toBe(data);
+    expect(Number(reader.readUnsignedLongLongInt())).toBe(Number(data));
     expect(reader.getSize()).toBe(0);
   });
 
@@ -279,7 +279,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(reader.readInt64()).toBe(data);
+    expect(Number(reader.readInt64())).toBe(Number(data));
     expect(reader.getSize()).toBe(0);
   });
 
@@ -343,7 +343,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(reader.readUInt64()).toBe(data);
+    expect(Number(reader.readUInt64())).toBe(Number(data));
     expect(reader.getSize()).toBe(0);
   });
 
