@@ -135,7 +135,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(reader.readLongInt()).toBe(data);
+    expect(Number(reader.readLongInt())).toBe(data);
     expect(reader.getSize()).toBe(0);
   });
 
@@ -151,7 +151,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(Number(reader.readLongLongInt())).toBe(Number(data));
+    expect(reader.readLongLongInt()).toBe(data);
     expect(reader.getSize()).toBe(0);
   });
 
@@ -199,7 +199,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(reader.readUnsignedLongInt()).toBe(data);
+    expect(Number(reader.readUnsignedLongInt())).toBe(data);
     expect(reader.getSize()).toBe(0);
   });
 
@@ -215,7 +215,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(Number(reader.readUnsignedLongLongInt())).toBe(Number(data));
+    expect(reader.readUnsignedLongLongInt()).toBe(data);
     expect(reader.getSize()).toBe(0);
   });
 
@@ -279,7 +279,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(Number(reader.readInt64())).toBe(Number(data));
+    expect(reader.readInt64()).toBe(data);
     expect(reader.getSize()).toBe(0);
   });
 
@@ -343,7 +343,7 @@ describe("Test the BufferReader class", () => {
     // Check weather reader sees the example buffer
     const reader = new BufferReader(writer?.getBuffer() as Buffer);
     expect(reader.getSize()).toBe(size);
-    expect(Number(reader.readUInt64())).toBe(Number(data));
+    expect(reader.readUInt64()).toBe(data);
     expect(reader.getSize()).toBe(0);
   });
 
