@@ -73,6 +73,14 @@ export class FileMapping {
   }
 
   /**
+   * @name close
+   * @description Closes the buffer.
+   */
+  public close() {
+    this._addonInstance.close();
+  }
+
+  /**
    * Returns the size of the given variable type
    *
    * @param {VarType} varType - The variable type to get the size of.
