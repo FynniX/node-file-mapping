@@ -1,8 +1,5 @@
 import {VarType} from "../enums/VarType.js";
 import {AddonInstance} from "../interface/AddonInstance.js";
-import BufferWriter from "./BufferWriter.js";
-import {Endian} from "../enums/Endian.js";
-import BufferReader from "./BufferReader.js";
 
 const addon = require('../../build/Release/mapped-buffer')
 
@@ -71,23 +68,6 @@ export class FileMapping {
      */
     public write(data: Buffer) {
         this._addonInstance.write(data)
-    }
-
-    /**
-     * @name getBufferReader
-     * @param buffer - The buffer to read.
-     * @param endian - The endianness of the buffer.
-     */
-    public static getBufferReader(buffer: Buffer, endian: Endian = Endian.Little) {
-        return new BufferReader(buffer, endian)
-    }
-
-    /**
-     * @name getBufferWrite
-     * @param endian - The endianness of the buffer.
-     */
-    public static getBufferWrite(endian: Endian = Endian.Little) {
-        return new BufferWriter(endian)
     }
 
     /**
