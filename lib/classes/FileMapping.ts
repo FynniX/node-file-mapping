@@ -2,7 +2,7 @@ import { VarType } from "../enums/VarType.js";
 import { AddonInstance } from "../interface/AddonInstance.js";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const addon = require("../../build/Release/mapped-buffer");
+const addon = require("../../build/Release/node-file-mapping");
 
 export class FileMapping {
   private readonly _addonInstance: AddonInstance;
@@ -81,5 +81,3 @@ export class FileMapping {
     return addon.getVarTypeSize(varType);
   }
 }
-
-export default FileMapping;
