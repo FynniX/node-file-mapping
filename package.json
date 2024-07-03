@@ -5,14 +5,9 @@
   "author": "Fynn Haupt",
   "version": "1.0.0",
   "license": "MIT",
-  "homepage": "https://github.com/FynniX/node-file-mapping#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FynniX/node-file-mapping.git"
-  },
-  "bugs": {
-    "url": "https://github.com/FynniX/node-file-mapping/issues"
-  },
+  "homepage": "https://fynnix.github.io/node-file-mapping/",
+  "repository": "https://github.com/FynniX/node-file-mapping",
+  "bugs": "https://github.com/FynniX/node-file-mapping/issues",
   "keywords": [
     "nodejs",
     "node",
@@ -50,6 +45,9 @@
   "lint-staged": {
     "**/*.{ts}": "eslint --fix",
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@eslint/js": "^9.6.0",
